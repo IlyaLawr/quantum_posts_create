@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum</title>
+    <link rel="stylesheet" href="/presentation/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>QUANTUM</h1>
+        <nav>
+            <button class="nav-btn active" data-form="create-post-container">Создать пост</button>
+            <button class="nav-btn" data-form="edit-post-container">Изменить пост</button>
+            <button class="nav-btn" data-form="delete-post-container">Удалить пост</button>
+        </nav>
+    </header>
+
+    <div id="notification-area"></div>
+
+    <main>
+        <div id="create-post-container" class="form-container active">
+            <h2>Создать пост</h2>
+            <form id="create-post-form">
+                <div class="form-group">
+                    <input type="text" id="post-title" name="post-title" placeholder="ЗАГОЛОВОК">
+                </div>
+                <div class="form-group">
+                    <textarea id="post-content" name="post-content" rows="8" placeholder="ТЕКСТ СОДЕРЖАНИЯ"></textarea>
+                </div>
+                <button type="submit">СОЗДАТЬ ПОСТ</button>
+            </form>
+        </div>
+
+        <div id="edit-post-container" class="form-container">
+            <h2>Изменить пост</h2>
+            <form id="edit-post-form">
+                 <div class="form-group">
+                    <input type="text" id="edit-post-id" name="post-id" placeholder="ПОСТ ID">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="edit-post-title" name="post-title" placeholder="НОВЫЙ ЗАГОЛОВОК">
+                </div>
+                <div class="form-group">
+                    <textarea id="edit-post-content" name="post-content" rows="8" placeholder="НОВЫЙ ТЕКСТ СОДЕРЖАНИЯ"></textarea>
+                </div>
+                <button type="submit">ОБНОВИТЬ ПОСТ</button>
+            </form>
+        </div>
+
+        <div id="delete-post-container" class="form-container">
+            <h2>Удалить пост</h2>
+            <form id="delete-post-form">
+                <div class="form-group">
+                    <input type="text" id="delete-post-id" name="post-id" placeholder="ПОСТ ID">
+                </div>
+                <button type="submit">УДАЛИТЬ ПОСТ</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="/presentation/static/js/script.js"></script>
+</body>
+</html>
