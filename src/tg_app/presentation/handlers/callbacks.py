@@ -19,7 +19,7 @@ def register_post_callback_handler(use_case: ShowPost, router: Router) -> None:
  
         post = await use_case.execute(callback_data.id)
         if not post:
-            await callback.answer('*Пост не найден.*', show_alert=True)
+            await callback.answer('Пост не найден.', show_alert=True)
             return
 
         keyboard = get_post_detail_keyboard(current_page=callback_data.page)
