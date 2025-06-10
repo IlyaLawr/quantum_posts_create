@@ -21,13 +21,14 @@ class SQLPostRepository(IPostRepository):
         return titles
 
 
-    async def get_post(self, connect: AsyncConnection, id: int) -> Post:
+    async def get_post(self, connect: AsyncConnection, id: int) -> Post | None:
         result = await connect.execute(select(PostModel.id,
                                               PostModel.title,
                                               PostModel.content,
                                               PostModel.created_at).where(PostModel.id == id))
         data = result.fetchone()
-        return Post(id=data[0],
-                    title=data[1],
-                    content=data[2],
-                    date=data[3].strftime("%d.%m.%Y %H:%M:%S"))
+        if data:
+            return Post(id=data[0],
+                        title=data[1],
+                        content=data[2],
+                        date=data[3].strftime("%d.%m.%Y %H:%M:%S"))
